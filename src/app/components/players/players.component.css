@@ -1,0 +1,9 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+button{
+    color: #ee1e46; 
+    border-radius: 4px;
+}

@@ -1,0 +1,34 @@
+<table class="table table-bordered table-dark">
+    <thead class="btn-primary">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Foundation</th>
+        <th scope="col">Players</th>
+        <th scope="col">Stadium</th>
+        <th scope="col" >Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of teamTab"> <!-- *ngFor -->
+        <th>{{x._id}}</th>
+        <td>{{x.name}}</td>
+        <td>{{x.owner}}</td>
+        <td>{{x.foundation}}</td>
+        <td>{{x.players}}</td>
+        <td>{{x.stadium}}</td>
+        <td>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="deleteTeam(x._id)" value="Delete">
+          
+          
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="displatTeam(x._id)" value="Display">
+          
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="updateTeam(x._id)" value="Update">
+          </div>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>

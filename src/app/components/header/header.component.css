@@ -1,0 +1,14 @@
+#drop{
+    background-color: transparent;
+}
+.name{
+    color: #ee1e46;
+    font-size: larger;
+    font-weight: bold;
+}
+.logout{
+    border: none;
+    color: aliceblue;
+    background-color: transparent;
+    cursor: pointer;
+}

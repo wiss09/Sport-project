@@ -1,0 +1,16 @@
+#score{
+   
+    margin-top: 150px;
+}
+.win{
+    color: green;
+    font-size: 50px;
+}
+.lose{
+ color: red;
+ font-size: 30px;   
+}
+.draw{
+    color: orange;
+    font-size: 30px;
+}

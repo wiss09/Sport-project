@@ -1,0 +1,44 @@
+<header class="site-navbar py-4" role="banner">
+
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="site-logo">
+          <a routerLink="home">
+            <img src="assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+        <div class="ml-auto">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li class="active"><a routerLink="" class="nav-link">Home</a></li>
+              <li><a routerLink="matches" class="nav-link">Matches</a></li>
+              <li><a [routerLink]="['/players']" class="nav-link" [routerLinkActive]="['active']">Players</a></li>
+              <li><a routerLink="search" class="nav-link">search</a></li>
+              <li><a routerLink="players.html" class="nav-link">
+                <div *ngIf="isLoggedIn() && decodedToken?.role=='admin' " class="dropdown">
+                  <button id="drop" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dashboard
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" routerLink="add-match">Add match</a>
+                    <a class="dropdown-item" routerLink="add-team">Add team</a>
+                    <a class="dropdown-item" routerLink="add-player">Add player</a>
+                    <a class="dropdown-item" routerLink="add-stadium">Add stadium</a>
+                    <a class="dropdown-item" [routerLink]="['admin']" >Administrator</a>
+                  </div>
+                </div>
+              </a></li>
+              <li><a *ngIf="isLoggedIn()" class="nav-link">Welcome <span class="name">{{decodedToken.lName}} {{decodedToken.fName}}</span></a></li>
+              <li *ngIf="!isLoggedIn()"><a routerLink="signin" class="nav-link">Login</a></li>
+              <li *ngIf="!isLoggedIn()"> <a routerLink="subscription" class="nav-link">Signup</a></li>
+              <button class="logout"  *ngIf="isLoggedIn()" ><a (click)="logout()" >Logout</a></button>
+            </ul>
+          </nav>
+
+          <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+              class="icon-menu h3 text-white"></span></a>
+        </div>
+      </div>
+    </div>
+
+  </header>

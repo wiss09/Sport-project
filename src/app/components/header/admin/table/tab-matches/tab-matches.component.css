@@ -1,0 +1,12 @@
+.RED{
+    text-decoration: underline red;
+      
+}
+.GREEN{
+    text-decoration: underline green;
+}
+
+.BLUE{
+    text-decoration: underline rgb(57, 57, 145);
+    text-decoration-style: double;
+}

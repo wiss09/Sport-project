@@ -1,0 +1,33 @@
+<table class="table table-bordered table-dark">
+    <thead class="btn-primary">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Team</th>
+        <th scope="col">Capacity</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of stadiumTab">
+        <th >{{x._id}}</th>
+        <td>{{x.name}}</td>
+        <td>{{x.country}}</td> <!-- string interpolation {{ }} ``= backtick []= des croches ""=double cotes {=acolade}-->
+        <td>{{x.team}}</td>
+        <td>{{x.capacity}}</td>
+        
+        <td>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" value="Delete">
+          
+          
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="goToDisplay(x._id)" value="Display">
+          
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="goToEdit(x._id)" value="Update">
+          </div>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

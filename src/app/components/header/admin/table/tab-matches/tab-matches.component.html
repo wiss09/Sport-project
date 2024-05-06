@@ -1,0 +1,43 @@
+<table class="table table-bordered table-dark">
+    <thead class="btn-primary">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Score one</th>
+        <th scope="col">Score two</th>
+        <th scope="col">Team one</th>
+        <th scope="col">Team two</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of matchesTab">
+        <th >{{x._id}}</th>
+        <td>{{x.scoreOne}}</td>
+        <td>{{x.scoreTwo}}</td> <!-- string interpolation {{ }} ``= backtick []= des croches ""=double cotes {=acolade}-->
+        
+        <td [ngClass]=
+        "{GREEN:x.scoreOne > x.scoreTwo ,
+          RED:x.scoreOne < x.scoreTwo,
+          BLUE:x.scoreOne == x.scoreTwo}">
+          {{x.teamOne}}
+        </td>
+        <td [ngClass]=
+        "{GREEN:x.scoreOne < x.scoreTwo ,
+          RED:x.scoreOne > x.scoreTwo,
+          BLUE:x.scoreOne == x.scoreTwo}" >
+          {{x.teamTwo}}
+        </td>
+        <td>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="goToDelete(x._id)" value="Delete">
+          
+          
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="goToDisplayInfo(x._id)" value="Display">
+          
+            <input type="submit" class="btn btn-primary py-3 px-5 mr-2" (click)="goToEdit(x._id)" value="Update">
+          </div>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
